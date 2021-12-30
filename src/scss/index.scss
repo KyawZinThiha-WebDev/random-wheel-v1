@@ -1,0 +1,66 @@
+@use 'component/wheel';
+@use 'component/tab';
+@use 'component/tab.input' as input;
+@use 'component/tab.result' as result;
+@use 'component/nav';
+@use 'component/winner';
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+	display: none;
+}
+a {
+	text-decoration: none;
+	color: black;
+	cursor: pointer;
+}
+button,
+input {
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
+}
+
+.App {
+	width: 100%;
+	height: calc(100vh - 50px);
+	.wheel-and-tab {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		.wheel {
+			width: 60%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+		}
+		.tab {
+			width: 30%;
+			height: 400px;
+		}
+		@media screen and (max-width: 610px) {
+			margin-top: 20px;
+			flex-direction: column;
+			.wheel {
+				width: 100%;
+				height: auto;
+			}
+			.tab {
+				width: 96%;
+				margin: auto;
+				max-height: 300px;
+			}
+		}
+	}
+	@media screen and (max-width: 610px) {
+		height: auto;
+	}
+}
